@@ -29,5 +29,6 @@ public final class Constants {
     public static final class OIConstants{
         public static final int kDriveControllerPort = 0;
         public static final int kTestAButton = XboxController.Button.kA.value;
+        public static final int kTestBButton = XboxController.Button.kB.value;
     }
 }
