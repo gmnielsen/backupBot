@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.DriveConstants;
 
@@ -22,6 +23,7 @@ public class DriveSub extends SubsystemBase {
     new CANSparkMax(DriveConstants.kRightMotor03CanBusID, MotorType.kBrushless);
   private final CANSparkMax m_three =
     new CANSparkMax(DriveConstants.kRightMotor04CanBusID, MotorType.kBrushless);
+    private final Spark flagMotor = new Spark(0);
 
   private final MotorControllerGroup m_LeftMotors =
     new MotorControllerGroup(m_zero, m_one);
@@ -67,6 +69,9 @@ public class DriveSub extends SubsystemBase {
   }
   public void runThree(double power){
     m_three.set(power);
+  }
+  public void flag(double power){
+    flagMotor.set(power);
   }
 
   @Override

@@ -49,11 +49,10 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    final JoystickButton runThreeButton = new JoystickButton(m_xBox, 1);
-    runThreeButton.whenPressed(new StartEndCommand (
-      () -> m_Drive.runThree(0.6),
-      () -> m_Drive.runThree(0.0),m_Drive)
-      .withTimeout(1.0));
+    final JoystickButton runThreeButton = new JoystickButton(m_xBox, OIConstants.kTestAButton);
+    runThreeButton.whileHeld(
+    new RunCommand(
+      () -> m_Drive.flag(0.2),m_Drive));
   }
 
   /**
