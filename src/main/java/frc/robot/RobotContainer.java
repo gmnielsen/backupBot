@@ -11,7 +11,6 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveSub;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
-import edu.wpi.first.wpilibj2.command.StartEndCommand;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
@@ -50,9 +49,11 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     final JoystickButton runThreeButton = new JoystickButton(m_xBox, OIConstants.kTestAButton);
-    runThreeButton.whileHeld(
-    new RunCommand(
-      () -> m_Drive.flag(0.2),m_Drive));
+    runThreeButton
+      .whileHeld(new RunCommand(
+        () -> m_Drive.flag(0.2),m_Drive))
+      .whenReleased(new RunCommand(
+        () -> m_Drive.flag(0.0),m_Drive));
   }
 
   /**
