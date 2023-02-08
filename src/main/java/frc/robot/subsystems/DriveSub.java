@@ -10,6 +10,8 @@ import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.DriveConstants;
 
+import java.io.Console;
+
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
@@ -55,6 +57,7 @@ public class DriveSub extends SubsystemBase {
   // drive method is arcade
   public void arcadeDrive(double fwd, double rot){
     m_drive.arcadeDrive(-fwd*Math.abs(fwd), rot);
+    //System.console().writer().print("should be moving "+fwd);
   }
 
   // individual motors
@@ -77,7 +80,7 @@ public class DriveSub extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    
+
   }
 
   @Override

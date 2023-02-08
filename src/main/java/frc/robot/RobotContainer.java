@@ -4,7 +4,6 @@
 
 package frc.robot;
 
-import java.net.NetworkInterface;
 
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
@@ -13,7 +12,6 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants.OIConstants;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DriveSub;
@@ -38,7 +36,7 @@ public class RobotContainer {
   private final ShuffleboardTab sbStuffs = Shuffleboard.getTab("myStuffs");
 
   // network tables stuffs
-  private final NetworkTable m_ntVariables = NetworkTableInstance.getDefault().getTable("default");
+  // private final NetworkTable m_ntVariables = NetworkTableInstance.getDefault().getTable("default");
   private final NetworkTableEntry flagSpeed = sbStuffs.add("flag speed", 0.0).getEntry();
 
 
